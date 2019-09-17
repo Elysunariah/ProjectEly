@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
 
 //                setupViewPager(viewPager)
 
-        tabs!!.setupWithViewPager(viewPager)
+//        tabs!!.setupWithViewPager(viewPager)
     }
 
 //    private fun setupViewPager(viewPager: ViewPager) {
