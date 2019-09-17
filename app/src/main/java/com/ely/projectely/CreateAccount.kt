@@ -29,14 +29,14 @@ class CreateAccount : AppCompatActivity() {
             var email = createEmail.text.toString()
             var password = createPass.text.toString()
             if (nama.isNotEmpty() || email.isNotEmpty() || password.isNotEmpty()) {
-                fAuth.signInWithEmailAndPassword(email, password)
+                fAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
                             simpanToFirebase(nama, email, password)
                             Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
                             finish()
                         } else {
-                            Toast.makeText(this, "Value must 6 or more digit", Toast.LENGTH_SHORT)
+                            Toast.makeText(this, "${it.exception}", Toast.LENGTH_SHORT)
                                 .show()
                         }
                     }

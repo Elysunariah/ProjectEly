@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:id="@+id/result_fragment"
-        android:name="com.ely.projectely.FragmentBottomNav.HomeFragment"/>
+<!--    <fragment-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:id="@+id/result_fragment"-->
+<!--        android:name="com.ely.projectely.FragmentBottomNav.HomeFragment"/>-->
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

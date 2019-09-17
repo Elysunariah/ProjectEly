@@ -40,8 +40,7 @@ class LoginTwo : AppCompatActivity() {
             val email = et_email.text.toString()
             val password = et_psw.text.toString()
 
-            if (email.isNotEmpty() || password.isNotEmpty() ||
-                email.equals("") || password.equals("")){
+            if (!email.isNullOrEmpty() || !password.isNullOrEmpty()){
                 fAuth.signInWithEmailAndPassword(email,password)
                     .addOnSuccessListener {
                         startActivity(Intent(this, BottomNav::class.java))
@@ -53,9 +52,9 @@ class LoginTwo : AppCompatActivity() {
             }else{
                 Toast.makeText(this, " LOGIN GAGAL",
                     Toast.LENGTH_SHORT).show()
-                val intent = Intent (this, BottomNav::class.java)
-                startActivity(intent)
-                finish()
+//                val intent = Intent (this, BottomNav::class.java)
+//                startActivity(intent)
+//                finish()
             }
         }
 //
