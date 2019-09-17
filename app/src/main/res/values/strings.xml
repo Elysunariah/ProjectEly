@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ProjectEly</string>
+
+        <string name="title_membaca">Membaca</string>
+    <string name="title_daftarbuku">Daftar Buku</string>
+</resources>

@@ -1,0 +1,159 @@
+{
+  "project_info": {
+    "project_number": "889575412986",
+    "firebase_url": "https://projectsaya-a28cf.firebaseio.com",
+    "project_id": "projectsaya-a28cf",
+    "storage_bucket": "projectsaya-a28cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889575412986:android:1b48b8fd2efd96ae",
+        "android_client_info": {
+          "package_name": "com.ely.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889575412986-1ft51k8j99nkc06s0q7aq0c3omrfa0cs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ely.myapp",
+            "certificate_hash": "52019e0f8cec9db708895dc419e6213a819548d8"
+          }
+        },
+        {
+          "client_id": "889575412986-j7n8g2bvgum86mlk4lj3m3lrkrnanice.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARRkaU2xXzu8Xwbrqpa-XKj8eimFsosYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889575412986-j7n8g2bvgum86mlk4lj3m3lrkrnanice.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889575412986:android:847840113ab088fd7b2543",
+        "android_client_info": {
+          "package_name": "com.ely.myproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889575412986-226tdcge2rr47fes87bs0cf4ktupgmcl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ely.myproject",
+            "certificate_hash": "52019e0f8cec9db708895dc419e6213a819548d8"
+          }
+        },
+        {
+          "client_id": "889575412986-j7n8g2bvgum86mlk4lj3m3lrkrnanice.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARRkaU2xXzu8Xwbrqpa-XKj8eimFsosYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889575412986-j7n8g2bvgum86mlk4lj3m3lrkrnanice.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889575412986:android:b0a8117777aa9f647b2543",
+        "android_client_info": {
+          "package_name": "com.ely.projectely"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889575412986-g0q5tdtsv6q737mhk8rv9uaha2ba65v6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ely.projectely",
+            "certificate_hash": "52019e0f8cec9db708895dc419e6213a819548d8"
+          }
+        },
+        {
+          "client_id": "889575412986-j7n8g2bvgum86mlk4lj3m3lrkrnanice.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARRkaU2xXzu8Xwbrqpa-XKj8eimFsosYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889575412986-j7n8g2bvgum86mlk4lj3m3lrkrnanice.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889575412986:android:315c3d358f01dae6",
+        "android_client_info": {
+          "package_name": "com.example.myproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889575412986-1151vadphfvps12rsm0rkicsr47e0goj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myproject",
+            "certificate_hash": "5c5b9cabb9b64489e89ed170d84ad358baf42512"
+          }
+        },
+        {
+          "client_id": "889575412986-j7n8g2bvgum86mlk4lj3m3lrkrnanice.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARRkaU2xXzu8Xwbrqpa-XKj8eimFsosYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889575412986-j7n8g2bvgum86mlk4lj3m3lrkrnanice.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
