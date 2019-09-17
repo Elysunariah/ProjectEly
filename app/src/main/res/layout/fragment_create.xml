@@ -69,7 +69,7 @@
             android:hint="Judul Buku"
             android:textSize="20dp" />
 
-        <TextView
+        <EditText
             android:id="@+id/tvMenulis"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
