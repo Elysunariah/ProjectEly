@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="center"
     android:background="#bbb"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,19 +10,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
         android:textSize="20dp"
         android:text="Welcome"
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="#F7F2F3" />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="please enter the account first!"
-        android:layout_marginTop="130dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="40dp"
         android:textColor="#fff"
         android:textSize="15dp"/>
 <!--    <TextView-->
@@ -37,27 +36,28 @@
 <!--        android:textStyle="bold"-->
 <!--        android:textColor="#F7F2F3" />-->
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="242dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="489dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="0dp"
-        android:elevation="4dp"
-        android:orientation="vertical"
-        android:padding="20dp">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/relativeLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="242dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="0dp"-->
+<!--        android:layout_marginLeft="30dp"-->
+<!--        android:layout_marginTop="489dp"-->
+<!--        android:layout_marginEnd="0dp"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:layout_marginBottom="0dp"-->
+<!--        android:elevation="4dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="20dp">-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="195dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
             android:orientation="vertical">
 
             <Button
@@ -91,17 +91,11 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="65dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="9dp"
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -119,8 +113,7 @@
                 android:text="Login" />
 
         </LinearLayout>
+    </LinearLayout>
 
-
-    </RelativeLayout>
-</RelativeLayout>
+<!--    </RelativeLayout>-->
 
