@@ -18,6 +18,8 @@ class CreateAccount : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.create_account)
+        supportActionBar!!.title = "Create Account"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         fAuth = FirebaseAuth.getInstance()
 
         createLogin.setOnClickListener {

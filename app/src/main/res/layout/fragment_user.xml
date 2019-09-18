@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="340dp">
@@ -12,7 +24,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
             android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
             android:background="#3F51B5"
             android:gravity="center"
             android:orientation="vertical">
@@ -21,14 +35,12 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="35dp"
                 android:src="@drawable/femaleprofile" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
                 android:text="Joodie"
                 android:textColor="#FFF"
                 android:textSize="20dp"
@@ -38,14 +50,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="81dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="86dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -53,7 +63,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="12"
-                        android:textColor="#000"
+                        android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
@@ -62,7 +72,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Mengikuti"
-                        android:textColor="#000"
+                        android:textColor="#fff"
                         android:textSize="15dp" />
                 </LinearLayout>
 
@@ -71,7 +81,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -79,7 +88,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="23k"
-                        android:textColor="#000"
+                        android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
@@ -88,42 +97,62 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="Pengikut"
-                        android:textColor="#000"
+                        android:textColor="#fff"
                         android:textSize="15dp" />
                 </LinearLayout>
             </LinearLayout>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="ikuti"
+                android:background="@drawable/rounded"
+                android:layout_marginTop="5dp"/>
         </LinearLayout>
     </RelativeLayout>
 
-    <com.google.android.material.appbar.AppBarLayout
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#000"
-            app:tabTextColor="#ccffffff"
-            app:tabSelectedTextColor="#fff"
-            app:tabGravity="fill"
-            app:tabMode="fixed" />
-
-    </com.google.android.material.appbar.AppBarLayout>
+        app:tabMode="fixed" />
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
+        android:id="@+id/viewpager_main"
         android:layout_width="match_parent"
-        android:layout_height="41dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tabs_main"/>
 
-    </androidx.viewpager.widget.ViewPager>
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
 
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/GV"
-        android:numColumns="auto_fit"/>
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tabs"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="#000"-->
+<!--            app:tabTextColor="#ccffffff"-->
+<!--            app:tabSelectedTextColor="#fff"-->
+<!--            app:tabGravity="fill"-->
+<!--            app:tabMode="fixed" />-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewpager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="41dp"-->
+<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+<!--    </androidx.viewpager.widget.ViewPager>-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/GV"-->
+<!--        android:numColumns="auto_fit"/>-->
 
 </LinearLayout>

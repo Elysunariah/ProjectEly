@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
@@ -21,38 +23,64 @@
         android:textAlignment="center"
         android:layout_marginTop="10dp"
         android:textSize="30dp"/>
-    <EditText
-        android:layout_gravity="center"
-        android:id="@+id/createNama"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Username"
-        android:textColor="@color/design_default_color_primary"
-        android:textColorHint="@color/design_default_color_primary"
-        android:textSize="20dp" />
 
-    <EditText
-        android:id="@+id/createEmail"
-        android:layout_width="300dp"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:hint="Email"
-        android:textColor="@color/design_default_color_primary"
+    <com.google.android.material.textfield.TextInputLayout
         android:textColorHint="@color/design_default_color_primary"
-        android:textSize="20dp" />
-    <EditText
-        android:id="@+id/createPass"
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
         android:layout_marginTop="30dp"
-        android:textSize="20dp"
-        android:textColor="@color/design_default_color_primary"
-        android:textColorHint="@color/design_default_color_primary"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/createNama"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"
+            android:textColor="@color/design_default_color_primary"
+            android:textColorHint="@color/design_default_color_primary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:textColorHint="@color/design_default_color_primary"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/createEmail"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="text"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"
+            android:textColor="@color/design_default_color_primary"
+            android:textColorHint="@color/design_default_color_primary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:passwordToggleEnabled="true"
+        android:textColorHint="@color/design_default_color_primary"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/createPass"
+            android:layout_width="300dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/design_default_color_primary"
+            android:textColorHint="@color/design_default_color_primary"
+            android:textSize="20dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btnCreate"

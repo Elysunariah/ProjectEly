@@ -16,11 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginTwo"/>
+        <activity android:name=".LoginTwo"
+            android:parentActivityName=".LoginAct"></activity>
         <activity android:name=".BottomNav"/>
-        <activity android:name=".TablayoutHome"/>
-        <activity android:name=".CreateAccount"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".CreateAccount"
+            android:parentActivityName=".LoginAct"></activity>
+<!--        <activity android:name=".activity.MainActivity"/>-->
+<!--        <activity android:name=".activity.MovieDetail"-->
+<!--            android:label="@string/movie_detail"-->
+<!--            android:parentActivityName=".activity.MainActivity">-->
+
+<!--            <meta-data-->
+<!--                android:name="android.support.PARRENT_ACTIVITY"-->
+<!--                android:value=".activity.HomeFragment"/>-->
+<!--        </activity>-->
     </application>
 
 </manifest>

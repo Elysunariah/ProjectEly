@@ -3,22 +3,25 @@ package com.ely.projectely.FragmentBottomNav
 import android.content.Intent
 import android.graphics.Bitmap
 import android.media.MediaScannerConnection
-import android.os.Build.VERSION_CODES.M
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.provider.SyncStateContract.Helpers.insert
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.ely.projectely.BukuContract
 import com.ely.projectely.R
+import com.ely.projectely.database
 import kotlinx.android.synthetic.main.fragment_create.*
+import org.jetbrains.anko.db.insert
+import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.toast
+import org.jetbrains.anko.toast
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -44,7 +47,6 @@ class CreateFragment : Fragment() {
         imageview = v.findViewById<View>(R.id.imageUpload) as ImageView
         return v
 
-
     }
 
 //    companion object {
@@ -59,11 +61,48 @@ class CreateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         btn!!.setOnClickListener {
             showPictureDialog()
         }
+//        btnSimpan.onClick {
+//            if (!validation()){
+//                return@onClick
+//            }
+//            insertDatabase()
+//        }
+
     }
+
+
+//    private fun insertDatabase() {
+//        database.use {
+//            insert(
+//                BukuContract.TABLE_BUKU,
+//                BukuContract.JUDUL to et_judul.text.toString(),
+//                BukuContract.PHOTO to null,
+//                BukuContract.ISIBUKU to etMenulis.text.toString()
+//            )
+//
+//            toast("Berhasil Menambahkan")
+//        }
+//    }
+//
+//    private fun validation(): Boolean {
+//        when {
+//            et_judul.text.toString().isNotBlank() -> {
+//                et_judul.requestFocus()
+//                et_judul.error = "tidak boleh kosong"
+//                return false
+//            }
+//            etMenulis.text.toString().isNotBlank() -> {
+//                etMenulis.requestFocus()
+//                return false
+//            }
+//            else -> return true
+//        }
+//
+//    }
+
 
     private fun showPictureDialog() {
         val pictureDialog = AlertDialog.Builder(activity!!.applicationContext)
@@ -152,6 +191,7 @@ class CreateFragment : Fragment() {
         }
         return ""
     }
+
     companion object {
         private val IMAGE_DIRECTORY = "ely"
         fun newInstance(id: Int): CreateFragment {
@@ -161,5 +201,6 @@ class CreateFragment : Fragment() {
             return fr
         }
     }
+
 
 }

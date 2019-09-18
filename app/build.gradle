@@ -43,6 +43,13 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation 'com.google.android.material:material:1.0.0'
 
+    //TODO 6 Tambahkab library anko
+    implementation "org.jetbrains.anko:anko:$anko_version"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -53,3 +60,7 @@ dependencies {
 
 }
 apply plugin: 'com.google.gms.google-services'
+
+androidExtensions {
+    experimental = true
+}

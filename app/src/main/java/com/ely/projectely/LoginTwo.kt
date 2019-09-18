@@ -21,13 +21,15 @@ class LoginTwo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_two)
+        supportActionBar!!.title = "Login"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         fAuth = FirebaseAuth.getInstance()
 
-        val actionBar = supportActionBar
-        actionBar!!.title = "Login"
-        actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setDisplayHomeAsUpEnabled(true)
+//        val actionBar = supportActionBar
+//        actionBar!!.title = "Login"
+//        actionBar.setDisplayHomeAsUpEnabled(true)
+//        actionBar.setDisplayHomeAsUpEnabled(true)
 
         loginCreate.setOnClickListener {
             startActivity(Intent(this, CreateAccount::class.java))
@@ -60,11 +62,11 @@ class LoginTwo : AppCompatActivity() {
 //
     }
 
-        override fun onSupportNavigateUp(): Boolean {
-            onBackPressed()
-            return true
-
-    }
+//        override fun onSupportNavigateUp(): Boolean {
+//            onBackPressed()
+//            return true
+//
+//    }
 
 //    private fun updateUI(user: FirebaseUser) {
 //        if (user != null) {
