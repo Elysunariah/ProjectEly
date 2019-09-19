@@ -28,8 +28,8 @@ import retrofit2.Response
 
 class HomeFragment : Fragment() {
 
-        private lateinit var viewPager : ViewPager
-    private lateinit var tabs : TabLayout
+    private lateinit var viewPager: ViewPager
+    private lateinit var tabs: TabLayout
 
     lateinit var apiKey: String
     var movies: MutableList<Movie> = mutableListOf()
@@ -37,14 +37,23 @@ class HomeFragment : Fragment() {
     val movieService: MovieService = ApiClient.getClient()
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? =
+    ): View? {
 
-        inflater.inflate(R.layout.fragment_home, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+        viewPager = view.findViewById(R.id.viewpager_main)
+        tabs = view.findViewById(R.id.tabs_main)
+
+        val fragmentAdapter = MyPagerAdapter(childFragmentManager)
+        viewPager.adapter = fragmentAdapter
+        tabs.setupWithViewPager(viewPager)
+
+        return view
+    }
+
 
     companion object {
         fun newInstance(id: Int): HomeFragment {
@@ -55,78 +64,6 @@ class HomeFragment : Fragment() {
 
         }
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-                viewPager = view.findViewById(R.id.viewpager_main)
-                tabs = view.findViewById(R.id.tabs_main)
-
-                val fragmentAdapter = MyPagerAdapter(childFragmentManager)
-        viewPager.adapter = fragmentAdapter
-        tabs.setupWithViewPager(viewPager)
-
-//        rvMovie.layoutManager = LinearLayoutManager(activity!!.applicationContext)
-//        rvMovie.adapter = adapter
-
-
-//        apiKey = getString(R.string.api_key)
-//        getPopularMovies(apiKey)
-
-    }
-    
-
-//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-//        inflater!!.inflate(R.menu.search_menu, menu)
-//        val searchItem : MenuItem = menu!!.findItem(R.id.icon_search)
-//        val searchView : SearchView = searchItem.actionView as SearchView
-//
-//        searchQuery(searchView)
-//        super.onCreateOptionsMenu(menu, inflater)
-//    }
-//    private fun searchQuery(searchView: SearchView) {
-//        var options : MutableMap<String, String> = mutableMapOf()
-//        options.put("api_key", apiKey)
-//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                if (query.isNullOrEmpty()) {
-//                    return false
-//                }
-//
-//                options.put("query", query!!.toString())
-//                val call : retrofit2.Call<MovieResult> = movieService.searchMovies(options)
-//                getMovieData(call)
-//
-//                return true
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                return false
-//            }
-//        })
-//    }
-//    fun getMovieData(call : retrofit2.Call<MovieResult>) {
-//        call.enqueue(object : retrofit2.Callback<MovieResult> {
-//            override fun onFailure(call: retrofit2.Call<MovieResult>?, t: Throwable?) {
-//                Toast.makeText(activity!!.applicationContext, "${t.toString()}", Toast.LENGTH_SHORT).show()
-//                Log.d("Movie Erorr", "${t?.message}")
-//            }
-//
-//            override fun onResponse(call: retrofit2.Call<MovieResult>?, response: Response<MovieResult>?) {
-//                if (response?.body() != null) {
-//                    movies = response.body()!!.movies.toMutableList()
-//                    adapter = MovieAdapter(movies)
-////                    rvMovie.adapter = adapter
-//                }
-//                Log.d("Movie", "${response?.body()}")
-//            }
-//
-//        })
-//    }
-//    fun getPopularMovies(apiKey: String) {
-//        val call : retrofit2.Call<MovieResult> = movieService.getPopularMovies(apiKey)
-//        getMovieData(call)
-//    }
 }
 
 

@@ -5,19 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:text="@string/title_rekomendasi"-->
+<!--        android:textColor="@android:color/background_dark"-->
+<!--        android:textSize="30sp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/title_daftarbuku"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_dark"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cahayanovel" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cahaya Surga Dimatanya"
+                android:textColor="#000"
+                android:textSize="20dp"/>
+        </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:orientation="vertical">-->
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ayahnovel" />-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Ayah"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="20dp"/>-->
+<!--            -->
+<!--        </LinearLayout>-->
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ayahnovel" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ayah          ANDRE HIRATA"
+                android:textColor="#000"
+                android:textSize="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
 
 <!--    <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:id="@+id/main_rv_list_data"-->

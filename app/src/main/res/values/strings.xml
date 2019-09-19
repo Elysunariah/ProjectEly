@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProjectEly</string>
         <string name="title_membaca">Membaca</string>
-    <string name="title_daftarbuku">Daftar Buku</string>
+    <string name="title_rekomendasi">Rekomendasi</string>
 
     <string name="api_key">api_key</string>
     <string name="poster_base_path">https://image.tmdb.org/t/p/w500</string>
