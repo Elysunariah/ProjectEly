@@ -1,12 +1,12 @@
 package com.ely.projectely.FragmentBottomNav
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.media.MediaScannerConnection
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.provider.SyncStateContract.Helpers.insert
 import android.util.Log
 import android.view.*
 import android.widget.Button
@@ -21,7 +21,6 @@ import kotlinx.android.synthetic.main.fragment_create.*
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.toast
-import org.jetbrains.anko.toast
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -49,14 +48,6 @@ class CreateFragment : Fragment() {
 
     }
 
-//    companion object {
-//        fun newInstance(id: Int): CreateFragment {
-//            val fr = CreateFragment()
-//            val b = Bundle()
-//            fr.setArguments(b)
-//            return fr
-//        }
-//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -64,44 +55,43 @@ class CreateFragment : Fragment() {
         btn!!.setOnClickListener {
             showPictureDialog()
         }
-//        btnSimpan.onClick {
-//            if (!validation()){
-//                return@onClick
-//            }
-//            insertDatabase()
-//        }
+        btnSimpan.onClick {
+            if (!validation()) {
+                return@onClick
+            }
+            insertDatabase(activity!!.applicationContext)
+        }
 
     }
 
 
-//    private fun insertDatabase() {
-//        database.use {
-//            insert(
-//                BukuContract.TABLE_BUKU,
-//                BukuContract.JUDUL to et_judul.text.toString(),
-//                BukuContract.PHOTO to null,
-//                BukuContract.ISIBUKU to etMenulis.text.toString()
-//            )
-//
-//            toast("Berhasil Menambahkan")
-//        }
-//    }
-//
-//    private fun validation(): Boolean {
-//        when {
-//            et_judul.text.toString().isNotBlank() -> {
-//                et_judul.requestFocus()
-//                et_judul.error = "tidak boleh kosong"
-//                return false
-//            }
-//            etMenulis.text.toString().isNotBlank() -> {
-//                etMenulis.requestFocus()
-//                return false
-//            }
-//            else -> return true
-//        }
-//
-//    }
+    private fun insertDatabase(ctx : Context) {
+        ctx.database.use {
+            insert(
+                BukuContract.TABLE_BUKU,
+                BukuContract.JUDUL to et_judul.text.toString(),
+                BukuContract.PHOTO to null,
+                BukuContract.ISIBUKU to etMenulis.text.toString()
+            )
+
+            toast("Berhasil Menambahkan")
+        }
+    }
+
+    private fun validation(): Boolean {
+        when {
+            et_judul.text.toString().isNotBlank() -> {
+                et_judul.requestFocus()
+                return true
+            }
+            etMenulis.text.toString().isNotBlank() -> {
+                etMenulis.requestFocus()
+                return true
+            }
+            else -> return false
+        }
+
+    }
 
 
     private fun showPictureDialog() {

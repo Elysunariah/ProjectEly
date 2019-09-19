@@ -1,10 +1,12 @@
 package com.ely.projectely
 
 import android.os.Bundle
+import android.provider.SyncStateContract
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.fragment_create.*
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.toast
 
 class AddBukuActivity: AppCompatActivity() {
@@ -47,4 +49,5 @@ class AddBukuActivity: AppCompatActivity() {
 //        }
 //
 //    }
+
 }

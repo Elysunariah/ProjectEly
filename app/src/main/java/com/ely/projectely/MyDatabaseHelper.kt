@@ -36,7 +36,7 @@ class MyDatabaseHelper(context: Context) : ManagedSQLiteOpenHelper(context, "dat
     }
 
 }
-val Context.database: MyDatabaseHelper
+public val Context.database: MyDatabaseHelper
     get() = MyDatabaseHelper.getInstance(
         applicationContext
     )

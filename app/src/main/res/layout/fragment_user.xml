@@ -112,47 +112,10 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs_main"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_rv_list_data"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabMode="fixed" />
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tabs_main"/>
-
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
-
-<!--        <com.google.android.material.tabs.TabLayout-->
-<!--            android:id="@+id/tabs"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="#000"-->
-<!--            app:tabTextColor="#ccffffff"-->
-<!--            app:tabSelectedTextColor="#fff"-->
-<!--            app:tabGravity="fill"-->
-<!--            app:tabMode="fixed" />-->
-
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
-
-<!--    <androidx.viewpager.widget.ViewPager-->
-<!--        android:id="@+id/viewpager"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="41dp"-->
-<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
-
-<!--    </androidx.viewpager.widget.ViewPager>-->
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:id="@+id/GV"-->
-<!--        android:numColumns="auto_fit"/>-->
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

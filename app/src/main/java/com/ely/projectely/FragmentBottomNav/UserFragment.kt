@@ -1,33 +1,30 @@
 package com.ely.projectely.FragmentBottomNav
 
+import android.content.Context
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
-import android.widget.Toolbar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager.widget.ViewPager
 import com.ely.projectely.BukuAdapter
 import com.ely.projectely.BukuContract
-import com.ely.projectely.FragmentBottomNav.Tablayout.MyPagerAdapter
-import com.ely.projectely.FragmentBottomNav.Tablayout.TablayooutDua
-import com.ely.projectely.FragmentBottomNav.Tablayout.TablayoutSatu
 import com.ely.projectely.R
-import com.google.android.material.tabs.TabLayout
+import com.ely.projectely.database
 import kotlinx.android.synthetic.main.fragment_user.*
-import kotlinx.coroutines.selects.select
-import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
-import org.jetbrains.anko.db.select
+import java.lang.reflect.InvocationTargetException
 
 
 class UserFragment : Fragment() {
-    private lateinit var viewPager : ViewPager
-    private lateinit var tabs : TabLayout
+//    private lateinit var viewPager : ViewPager
+//    private lateinit var tabs : TabLayout*
 
 //    var adapter: BukuAdapter? = null
+
+    var adapter: BukuAdapter? = null
+    var ctx : Context? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,13 +32,13 @@ class UserFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view: View = inflater.inflate(R.layout.fragment_user, container, false)
-        viewPager = view.findViewById(R.id.viewpager_main)
-        tabs = view.findViewById(R.id.tabs_main)
+        val v: View = inflater.inflate(R.layout.fragment_user, container, false)
+        ctx = this@UserFragment.activity
+        return v
+//        viewPager = view.findViewById(R.id.viewpager_main)
+//        tabs = view.findViewById(R.id.tabs_main)*
 
-        val fragmentAdapter = MyPagerAdapter(childFragmentManager)
-        viewPager.adapter = fragmentAdapter
-        tabs.setupWithViewPager(viewPager)
+
 
         return view
 
@@ -57,49 +54,51 @@ companion object {
         return fr
     }
 }
-    //                setupViewPager(viewPager)
-
-//        tabs!!.setupWithViewPager(viewPager)
-
-
-    //    private fun setupViewPager(viewPager: ViewPager) {
-//        val adapter = ViewPagerAdapter(supportFragmentManager)
-//        adapter.addFragment(TablayoutSatu(), "Membaca")
-//        adapter.addFragment(TablayooutDua(), "Daftar Buku")
-//        viewPager.adapter = adapter
-//    }
-
-//    internal inner class ViewPagerAdapter(manager: FragmentManager) :
-//        FragmentPagerAdapter(manager) {
-//        private val mFragmentList = ArrayList<Fragment>()
-//        private val mFragmentTitleList = ArrayList<String>()
-//
-//        override fun getItem(position: Int): Fragment {
-//            return mFragmentList[position]
-//
-//        }
-//
-//        override fun getCount(): Int {
-//            return mFragmentTitleList.size
-//        }
-//
-//        fun addFragment(fragment: Fragment, title: String) {
-//            mFragmentList.add(fragment)
-//            mFragmentTitleList.add(title)
-//        }
-//
-//        override fun getPageTitle(position: Int): CharSequence? {
-//            return mFragmentTitleList[position]
-//        }
-//
-//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        if(activity is AppCompatActivity){
-//            (activity as AppCompatActivity).setSupportActionBar(Toolbar)
-//        }
 
+        val list = getListBuku()
+
+        val layoutManager = LinearLayoutManager(activity!!, LinearLayoutManager.VERTICAL, false)
+        adapter = BukuAdapter(activity!!, list)
+
+        main_rv_list_data.layoutManager = layoutManager
+        main_rv_list_data.adapter = adapter
+
+
+
+//        val fragmentAdapter = MyPagerAdapter(childFragmentManager)
+//        viewPager.adapter = fragmentAdapter
+//        tabs.setupWithViewPager(viewPager)*
+    }
+//    private fun getListDataStudent(): List<BukuContract> {
+//        var listData: List<BukuContract>? = null
+//        ctx!!.database.use {
+//            val result = select(BukuContract.TABLE_BUKU)
+//            listData = result.parseList(classParser<BukuContract>())
+//        }
+//        return listData!!
+//    }
+    private fun getListBuku(): List<BukuContract> {
+        var listData: List<BukuContract>? = null
+        try {
+            ctx!!.database.use {
+                val result = select(BukuContract.TABLE_BUKU)
+                listData = result.parseList(classParser<BukuContract>())
+            }
+            return listData!!
+        }catch (e : InvocationTargetException) {
+            e.printStackTrace()
+            return emptyList()
+        }}
+
+    override fun onResume() {
+        super.onResume()
+        val listRefresh = getListBuku()
+        adapter = BukuAdapter(activity!!, listRefresh)
+        adapter?.notifyDataSetChanged()
+        main_rv_list_data.adapter = adapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
