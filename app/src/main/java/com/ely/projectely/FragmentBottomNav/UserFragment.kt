@@ -17,10 +17,6 @@ import java.lang.reflect.InvocationTargetException
 
 
 class UserFragment : Fragment() {
-//    private lateinit var viewPager : ViewPager
-//    private lateinit var tabs : TabLayout*
-
-//    var adapter: BukuAdapter? = null
 
     var adapter: BukuAdapter? = null
     var ctx : Context? = null
@@ -33,14 +29,10 @@ class UserFragment : Fragment() {
     ): View? {
 
         val v: View = inflater.inflate(R.layout.fragment_user, container, false)
+
         ctx = this@UserFragment.activity
         return v
-//        viewPager = view.findViewById(R.id.viewpager_main)
-//        tabs = view.findViewById(R.id.tabs_main)*
 
-
-
-        return view
 
     }
 
@@ -58,6 +50,7 @@ companion object {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val list = getListBuku()
 
         val layoutManager = LinearLayoutManager(activity!!, LinearLayoutManager.VERTICAL, false)
@@ -66,20 +59,7 @@ companion object {
         main_rv_list_data.layoutManager = layoutManager
         main_rv_list_data.adapter = adapter
 
-
-
-//        val fragmentAdapter = MyPagerAdapter(childFragmentManager)
-//        viewPager.adapter = fragmentAdapter
-//        tabs.setupWithViewPager(viewPager)*
     }
-//    private fun getListDataStudent(): List<BukuContract> {
-//        var listData: List<BukuContract>? = null
-//        ctx!!.database.use {
-//            val result = select(BukuContract.TABLE_BUKU)
-//            listData = result.parseList(classParser<BukuContract>())
-//        }
-//        return listData!!
-//    }
     private fun getListBuku(): List<BukuContract> {
         var listData: List<BukuContract>? = null
         try {
@@ -101,28 +81,29 @@ companion object {
         main_rv_list_data.adapter = adapter
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.optionsmenu, menu)
-        return
+        inflater!!.inflate(R.menu.optionsmenudua, menu)
+
+
+        menu!!.findItem(R.id.action_check).isVisible = false
+
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val id = item!!.getItemId()
-
-        if (id == R.id.about) {
-            Toast.makeText(activity!!.applicationContext, "About Click", Toast.LENGTH_SHORT).show()
-            return true
-        }
-        if (id == R.id.setting) {
-            Toast.makeText(activity!!.applicationContext, "Setting click", Toast.LENGTH_SHORT).show()
-            return true
-        }
-        if (id == R.id.logout) {
-            Toast.makeText(activity!!.applicationContext, "logout click", Toast.LENGTH_SHORT).show()
-            return true
+        val id = item!!.itemId
+        if (id == R.id.action_settings) {
+            Toast.makeText(activity, "Setting", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 
 
 }

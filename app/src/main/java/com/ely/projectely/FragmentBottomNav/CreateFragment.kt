@@ -192,5 +192,30 @@ class CreateFragment : Fragment() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater!!.inflate(R.menu.optionsmenudua, menu)
+
+//        menu!!.findItem(R.id.action_settings).isVisible = false
+        menu!!.findItem(R.id.action_settings).isVisible = false
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        val id = item!!.itemId
+        if (id == R.id.action_check) {
+            Toast.makeText(activity, "Settings", Toast.LENGTH_SHORT).show()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+
+
 
 }

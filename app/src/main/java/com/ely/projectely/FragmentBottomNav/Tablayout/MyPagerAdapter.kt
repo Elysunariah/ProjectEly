@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 class MyPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        return when(position) {
+        return when (position) {
             0 -> {
                 TablayoutSatu()
             }
@@ -21,11 +21,11 @@ class MyPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
         return 2
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
-        return when(position) {
-            0 -> "tabone"
+    override fun getPageTitle(position: Int): CharSequence {
+        return when (position) {
+            0 -> "Rekomendasi"
             else -> {
-                return "tabtwo"
+                return "Daftar Bacaan"
             }
         }
     }

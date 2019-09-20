@@ -5,31 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">-->
-
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"-->
-<!--        android:elevation="4dp"-->
-<!--        app:titleTextColor="@android:color/white"-->
-<!--        android:background="@color/colorPrimary"-->
-<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
-
-<!--    </androidx.appcompat.widget.Toolbar>-->
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rvMovie"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:paddingTop="?attr/actionBarSize">-->
-
-<!--    </androidx.recyclerview.widget.RecyclerView>-->
-
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs_main"
             android:layout_width="match_parent"
@@ -39,15 +14,15 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-<!--            app:layout_constraintTop_toBottomOf="@+id/tabs_main"-->
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tabs_main"/>
 
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:id="@+id/bnGV"
-        android:numColumns="auto_fit"/>
+<!--    <GridView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:id="@+id/bnGV"-->
+<!--        android:numColumns="auto_fit"/>-->
 
 
 </RelativeLayout>
