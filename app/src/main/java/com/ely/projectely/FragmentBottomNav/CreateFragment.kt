@@ -198,10 +198,10 @@ class CreateFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.optionsmenudua, menu)
+        inflater!!.inflate(R.menu.menucheck, menu)
 
 //        menu!!.findItem(R.id.action_settings).isVisible = false
-        menu!!.findItem(R.id.action_settings).isVisible = false
+//        menu!!.findItem(R.id.action_settings).isVisible = false
 
         super.onCreateOptionsMenu(menu, inflater)
     }
@@ -209,7 +209,7 @@ class CreateFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.itemId
         if (id == R.id.action_check) {
-            Toast.makeText(activity, "Settings", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "berhasil disimpan", Toast.LENGTH_SHORT).show()
         }
 
         return super.onOptionsItemSelected(item)

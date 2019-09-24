@@ -12,7 +12,15 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/setting"
-        android:title="Setting"
-        app:showAsAction="never"/>
+        android:id="@+id/icon_menu"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_black_24dp"
+        android:title="Item"
+        android:visible="true"
+        app:showAsAction="always" />
+
+<!--    <item-->
+<!--        android:id="@+id/setting"-->
+<!--        android:title="Setting"-->
+<!--        app:showAsAction="never"/>-->
 </menu>

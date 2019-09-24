@@ -89,9 +89,6 @@ companion object {
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater!!.inflate(R.menu.optionsmenudua, menu)
 
-
-        menu!!.findItem(R.id.action_check).isVisible = false
-
         super.onCreateOptionsMenu(menu, inflater)
     }
 
