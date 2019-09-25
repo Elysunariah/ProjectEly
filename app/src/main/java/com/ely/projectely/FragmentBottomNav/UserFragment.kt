@@ -1,22 +1,24 @@
 package com.ely.projectely.FragmentBottomNav
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ely.projectely.BukuAdapter
-import com.ely.projectely.BukuContract
-import com.ely.projectely.R
-import com.ely.projectely.database
+import com.ely.projectely.*
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_user.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
+import org.jetbrains.anko.support.v4.startActivity
 import java.lang.reflect.InvocationTargetException
 
 
 class UserFragment : Fragment() {
+
+    lateinit var fAuth : FirebaseAuth
 
     var adapter: BukuAdapter? = null
     var ctx : Context? = null
@@ -71,7 +73,8 @@ companion object {
         }catch (e : InvocationTargetException) {
             e.printStackTrace()
             return emptyList()
-        }}
+        }
+    }
 
     override fun onResume() {
         super.onResume()
@@ -89,15 +92,22 @@ companion object {
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater!!.inflate(R.menu.optionsmenudua, menu)
 
+
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.itemId
-        if (id == R.id.action_settings) {
-            Toast.makeText(activity, "Setting", Toast.LENGTH_SHORT).show()
+        if (id == R.id.action_logout) {
+            logout()
+            startActivity(Intent(this.getContext(), LoginAct::class.java))
+            return true
+//            Toast.makeText(activity, "Setting", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
+    }
+    private fun logout() {
+        FirebaseAuth.getInstance().signOut()
     }
 
 

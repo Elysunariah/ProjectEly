@@ -1,5 +1,8 @@
 package com.ely.projectely
 
+import android.content.DialogInterface
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.FrameLayout
@@ -14,7 +17,9 @@ import androidx.core.app.ComponentActivity
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 
 class BottomNav : AppCompatActivity() {
@@ -24,11 +29,6 @@ class BottomNav : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bottom_navigation)
-
-
-//        setupViewPager(viewPager)
-//
-//        tabs!!.setupWithViewPager(viewPager)
 
         toolbar = supportActionBar!!
         val bottomNavigation: BottomNavigationView = findViewById(R.id.navigationView)
@@ -79,6 +79,20 @@ class BottomNav : AppCompatActivity() {
         transaction.commit()
 
     }
+
+//    fun showDialog(view: View) {
+//        val  alertDialog = AlertDialog.Builder(this)
+//            .setIcon(android.R.drawable.ic_btn_speak_now)
+//            .setTitle("Are You sure to Exit")
+//            .setMessage("if yes then application will close")
+//            .setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, i ->
+//                finish()
+//            })
+//            .setNegativeButton("No", DialogInterface.OnClickListener { dialog, i ->
+//                Toast.makeText(applicationContext, "Nothing Happened", Toast.LENGTH_SHORT).show()
+//            })
+//            .show()
+//    }
 }
 
 //    private fun setupViewPager(viewPager: ViewPager) {
