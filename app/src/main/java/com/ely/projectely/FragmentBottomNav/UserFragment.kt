@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ely.projectely.*
+import com.ely.projectely.prefshelper.PrefsHelper
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_user.*
 import org.jetbrains.anko.db.classParser
@@ -100,8 +101,11 @@ companion object {
         val id = item!!.itemId
         if (id == R.id.action_logout) {
             logout()
-            startActivity(Intent(this.getContext(), LoginAct::class.java))
-            return true
+            val prefsHelper= PrefsHelper(activity!!.applicationContext)
+            prefsHelper.SaveLogin(false)
+            startActivity(Intent(activity, LoginAct::class.java))
+//            startActivity(Intent(this.getContext(), LoginAct::class.java))
+//            return true
 //            Toast.makeText(activity, "Setting", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)

@@ -8,6 +8,7 @@ import android.view.Window
 import android.widget.Toast
 import androidx.annotation.MainThread
 import androidx.appcompat.app.AppCompatActivity
+import com.ely.projectely.prefshelper.PrefsHelper
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -24,10 +25,20 @@ class LoginAct : AppCompatActivity() {
     private lateinit var mGoogleSignIn: GoogleSignInClient
     private lateinit var fAuth: FirebaseAuth
 
+    private lateinit var prefsHelper : PrefsHelper
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.login_act)
+
+        prefsHelper = PrefsHelper(this@LoginAct)
+        val statusLogin = prefsHelper.getStatusLogin()
+        if(statusLogin!!){
+            startActivity(Intent(this, BottomNav::class.java))
+            finish()
+        }
 
         fAuth = FirebaseAuth.getInstance()
         val gso = GoogleSignInOptions.Builder(
@@ -83,7 +94,9 @@ class LoginAct : AppCompatActivity() {
                 "Login Berhasil Welcome ${user.displayName}",
                 Toast.LENGTH_SHORT
             ).show()
+        prefsHelper.SaveLogin(true)
         startActivity(Intent(this, BottomNav::class.java))
+        finish()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

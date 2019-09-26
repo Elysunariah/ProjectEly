@@ -64,6 +64,21 @@ class CreateFragment : Fragment() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater!!.inflate(R.menu.menucheck, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        val id = item!!.itemId
+        if (id == R.id.action_check) {
+            Toast.makeText(activity, "berhasil disimpan", Toast.LENGTH_SHORT).show()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
 
     private fun insertDatabase(ctx : Context) {
         ctx.database.use {
@@ -95,7 +110,7 @@ class CreateFragment : Fragment() {
 
 
     private fun showPictureDialog() {
-        val pictureDialog = AlertDialog.Builder(activity!!.applicationContext)
+        val pictureDialog = AlertDialog.Builder(activity!!)
         pictureDialog.setTitle("Select Action")
         val pictureDialogItems = arrayOf("select Foto From Gallery", "Capture Foto From Camera")
         pictureDialog.setItems(pictureDialogItems) { dialog, which ->
@@ -197,23 +212,19 @@ class CreateFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.menucheck, menu)
-
-//        menu!!.findItem(R.id.action_settings).isVisible = false
-//        menu!!.findItem(R.id.action_settings).isVisible = false
-
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val id = item!!.itemId
-        if (id == R.id.action_check) {
-            Toast.makeText(activity, "berhasil disimpan", Toast.LENGTH_SHORT).show()
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+//        inflater!!.inflate(R.menu.menucheck, menu)
+//        super.onCreateOptionsMenu(menu, inflater)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//        val id = item!!.itemId
+//        if (id == R.id.action_check) {
+//            Toast.makeText(activity, "berhasil disimpan", Toast.LENGTH_SHORT).show()
+//        }
+//
+//        return super.onOptionsItemSelected(item)
+//    }
 
 
 

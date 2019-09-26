@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.ely.projectely.prefshelper.PrefsHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -17,12 +18,21 @@ class LoginTwo : AppCompatActivity() {
 
     private lateinit var fAuth: FirebaseAuth
 
+    private lateinit var prefsHelper: PrefsHelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_two)
         supportActionBar!!.title = "Login"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        prefsHelper = PrefsHelper(this@LoginTwo)
+        val statusLogin = prefsHelper.getStatusLogin()
+        if (statusLogin!!) {
+            startActivity(Intent(this, BottomNav::class.java))
+            finish()
+        }
 
         fAuth = FirebaseAuth.getInstance()
 
@@ -45,7 +55,9 @@ class LoginTwo : AppCompatActivity() {
             if (!email.isNullOrEmpty() || !password.isNullOrEmpty()){
                 fAuth.signInWithEmailAndPassword(email,password)
                     .addOnSuccessListener {
+                        prefsHelper.SaveLogin(true)
                         startActivity(Intent(this, BottomNav::class.java))
+                        finish()
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, "LOGIN GAGAL",
