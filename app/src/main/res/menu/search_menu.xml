@@ -3,13 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item
-        android:id="@+id/icon_search"
-        android:enabled="true"
+<!--    <item-->
+<!--        android:id="@+id/icon_search"-->
+<!--        android:enabled="true"-->
+<!--        android:icon="@drawable/ic_search_black_24dp"-->
+<!--        android:title="Item"-->
+<!--        android:visible="true"-->
+<!--        app:showAsAction="always" />-->
+
+    <item android:id="@+id/icon_search"
+        android:title="Search"
         android:icon="@drawable/ic_search_black_24dp"
-        android:title="Item"
-        android:visible="true"
-        app:showAsAction="always" />
+        app:showAsAction="collapseActionView|always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
 
     <item
         android:id="@+id/icon_menu"
