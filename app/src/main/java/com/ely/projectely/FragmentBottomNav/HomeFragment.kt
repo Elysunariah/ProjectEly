@@ -2,6 +2,7 @@ package com.ely.projectely.FragmentBottomNav
 
 import android.os.Bundle
 import android.view.*
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -56,6 +57,14 @@ class HomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater!!.inflate(R.menu.search_menu, menu)
+        
+        val searchItem = menu!!.findItem(R.id.icon_search)
+        
+        searchItem.expandActionView()
+
+        val searchView = searchItem.actionView as SearchView
+
+
 
 //        menu!!.findItem(R.id.action_settings).isVisible = false
 //        menu!!.findItem(R.id.action_settings).isVisible = false

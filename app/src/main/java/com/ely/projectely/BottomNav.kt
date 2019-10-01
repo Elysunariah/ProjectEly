@@ -54,22 +54,22 @@ class BottomNav : AppCompatActivity() {
                     toolbar.title = "Home"
                     val homeFragment = HomeFragment.newInstance(1)
                     openFragment(homeFragment)
-                    return@OnNavigationItemSelectedListener true
+//                    return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_create -> {
                     toolbar.title = "Create"
                     val createFragment = CreateFragment.newInstance(2)
                     openFragment(createFragment)
-                    return@OnNavigationItemSelectedListener true
+//                    return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_user -> {
                     toolbar.title = "User"
                     val userFragment = UserFragment.newInstance(3)
                     openFragment(userFragment)
-                    return@OnNavigationItemSelectedListener true
+//                    return@OnNavigationItemSelectedListener true
                 }
             }
-            false
+            true
         }
 
     private fun openFragment(fragment: Fragment) {

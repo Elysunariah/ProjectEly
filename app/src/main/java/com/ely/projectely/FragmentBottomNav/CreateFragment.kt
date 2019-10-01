@@ -55,12 +55,12 @@ class CreateFragment : Fragment() {
         btn!!.setOnClickListener {
             showPictureDialog()
         }
-        btnSimpan.onClick {
-            if (!validation()) {
-                return@onClick
-            }
-            insertDatabase(activity!!.applicationContext)
-        }
+//        btnSimpan.onClick {
+//            if (!validation()) {
+//                return@onClick
+//            }
+//            insertDatabase(activity!!.applicationContext)
+//        }
 
     }
 
@@ -73,7 +73,9 @@ class CreateFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.itemId
         if (id == R.id.action_check) {
-            Toast.makeText(activity, "berhasil disimpan", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(activity, "berhasil disimpan", Toast.LENGTH_SHORT).show()
+
+            insertDatabase(activity!!.applicationContext)
         }
 
         return super.onOptionsItemSelected(item)
@@ -90,6 +92,7 @@ class CreateFragment : Fragment() {
             )
 
             toast("Berhasil Menambahkan")
+            startActivity(Intent(activity, UserFragment::class.java))
         }
     }
 
