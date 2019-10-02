@@ -80,47 +80,7 @@ class BottomNav : AppCompatActivity() {
 
     }
 
-//    fun showDialog(view: View) {
-//        val  alertDialog = AlertDialog.Builder(this)
-//            .setIcon(android.R.drawable.ic_btn_speak_now)
-//            .setTitle("Are You sure to Exit")
-//            .setMessage("if yes then application will close")
-//            .setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, i ->
-//                finish()
-//            })
-//            .setNegativeButton("No", DialogInterface.OnClickListener { dialog, i ->
-//                Toast.makeText(applicationContext, "Nothing Happened", Toast.LENGTH_SHORT).show()
-//            })
-//            .show()
-//    }
 }
 
-//    private fun setupViewPager(viewPager: ViewPager) {
-//        val adapter =ViewPagerAdapter(supportFragmentManager)
-//        adapter.addFragment(HomeFragment(), "Home")
-//        adapter.addFragment(AboutUsFragment(), "About Us")
-//        adapter.addFragment(ContactUsFragment(),"Contact Us")
-//        viewPager.adapter = adapter
-//    }
-//
-//    internal inner class ViewPagerAdapter(manager: FragmentManager) :FragmentPagerAdapter(manager) {
-//        private val mFragmentList = ArrayList<Fragment>()
-//        private val mFragmentTittleList = ArrayList<String>()
-//
-//        override fun getItem(position: Int): Fragment {
-//            return mFragmentList[position]
-//
-//        }
-//
-//        override fun getCount(): Int {
-//            return mFragmentList.size
-//        }
-//
-//        fun addFragment(fragment: Fragment, tittle : String) {
-//            mFragmentList.add(fragment)
-//            mFragmentTittleList.add(tittle)
-//        }
-//
-//        override fun getPageTitle(position: Int): CharSequence? {
-//            return mFragmentTittleList[position]
+
 

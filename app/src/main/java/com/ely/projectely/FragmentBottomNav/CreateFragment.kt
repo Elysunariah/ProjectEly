@@ -16,8 +16,14 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.ely.projectely.BukuContract
 import com.ely.projectely.R
+import com.ely.projectely.activity.Show
+import com.ely.projectely.activity.User
 import com.ely.projectely.database
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_create.*
+import kotlinx.android.synthetic.main.fragment_create.btnSave
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.toast
@@ -29,6 +35,8 @@ import java.util.*
 
 
 class CreateFragment : Fragment() {
+
+    lateinit var ref : DatabaseReference
 
     private var btn: Button? = null
     private var imageview: ImageView? = null
@@ -55,61 +63,31 @@ class CreateFragment : Fragment() {
         btn!!.setOnClickListener {
             showPictureDialog()
         }
-//        btnSimpan.onClick {
-//            if (!validation()) {
-//                return@onClick
-//            }
-//            insertDatabase(activity!!.applicationContext)
-//        }
 
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        inflater!!.inflate(R.menu.menucheck, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val id = item!!.itemId
-        if (id == R.id.action_check) {
-//            Toast.makeText(activity, "berhasil disimpan", Toast.LENGTH_SHORT).show()
-
-            insertDatabase(activity!!.applicationContext)
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
+        ref = FirebaseDatabase.getInstance().getReference("USER")
 
 
-    private fun insertDatabase(ctx : Context) {
-        ctx.database.use {
-            insert(
-                BukuContract.TABLE_BUKU,
-                BukuContract.JUDUL to et_judul.text.toString(),
-                BukuContract.PHOTO to null,
-                BukuContract.ISIBUKU to etMenulis.text.toString()
-            )
-
-            toast("Berhasil Menambahkan")
-            startActivity(Intent(activity, UserFragment::class.java))
+        btnSave.setOnClickListener {
+            savedata()
+            val intent = Intent(activity, UserFragment::class.java)
+            startActivity(intent)
         }
     }
+    private fun savedata() {
+        val judul = et_judul.text.toString()
+        val isibuku = etMenulis.text.toString()
 
-    private fun validation(): Boolean {
-        when {
-            et_judul.text.toString().isNotBlank() -> {
-                et_judul.requestFocus()
-                return true
-            }
-            etMenulis.text.toString().isNotBlank() -> {
-                etMenulis.requestFocus()
-                return true
-            }
-            else -> return false
+        val user = User(judul,isibuku)
+        val userId = ref.push().key.toString()
+
+        ref.child(userId).setValue(user).addOnCompleteListener {
+            Toast.makeText(activity,"succes",Toast.LENGTH_SHORT).show()
+            et_judul.setText("")
+            etMenulis.setText("")
         }
 
     }
+
 
 
     private fun showPictureDialog() {
@@ -209,25 +187,6 @@ class CreateFragment : Fragment() {
             return fr
         }
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        setHasOptionsMenu(true)
-        super.onCreate(savedInstanceState)
-    }
-
-//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-//        inflater!!.inflate(R.menu.menucheck, menu)
-//        super.onCreateOptionsMenu(menu, inflater)
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-//        val id = item!!.itemId
-//        if (id == R.id.action_check) {
-//            Toast.makeText(activity, "berhasil disimpan", Toast.LENGTH_SHORT).show()
-//        }
-//
-//        return super.onOptionsItemSelected(item)
-//    }
 
 
 

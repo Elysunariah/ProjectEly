@@ -21,6 +21,13 @@
         tools:text="judul"
         android:textSize="50dp"
         android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/isitittle"
+        tools:text="isi"
+        android:textSize="50dp"/>
 
 
 </LinearLayout>

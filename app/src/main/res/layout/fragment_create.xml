@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save"
+        android:id="@+id/btnSave"/>
 
         <ImageView
             android:id="@+id/imageUpload"
@@ -57,13 +61,13 @@
             android:layout_gravity="center"
             android:hint="Mulai Menulis"
             android:textSize="20dp" />
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center"
-            android:text="Save"
-            android:id="@+id/btnSimpan"/>
+<!--        <Button-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="Save"-->
+<!--            android:id="@+id/btnSimpan"/>-->
     </LinearLayout>
 
 </LinearLayout>

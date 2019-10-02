@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-    <!--    android:theme="@android:style/Theme.NoTitleBar">-->
-
-
         <activity android:name=".LoginAct"
                     android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -27,9 +24,10 @@
         </activity>
         <activity android:name=".LoginTwo"
             android:parentActivityName=".LoginAct"></activity>
-        <activity android:name=".BottomNav"/>
+        <activity android:name=".BottomNav" />
         <activity android:name=".CreateAccount"
             android:parentActivityName=".LoginAct"></activity>
+
 <!--        <activity android:name=".activity.MainActivity"/>-->
 <!--        <activity android:name=".activity.MovieDetail"-->
 <!--            android:label="@string/movie_detail"-->

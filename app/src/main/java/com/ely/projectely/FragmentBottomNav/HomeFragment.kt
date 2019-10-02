@@ -57,13 +57,6 @@ class HomeFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater!!.inflate(R.menu.search_menu, menu)
-        
-        val searchItem = menu!!.findItem(R.id.icon_search)
-        
-        searchItem.expandActionView()
-
-        val searchView = searchItem.actionView as SearchView
-
 
 
 //        menu!!.findItem(R.id.action_settings).isVisible = false
@@ -78,7 +71,7 @@ class HomeFragment : Fragment() {
             Toast.makeText(activity, "search", Toast.LENGTH_SHORT).show()
         }
         if (id == R.id.icon_menu) {
-            Toast.makeText(activity, "menu", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(activity, " ", Toast.LENGTH_SHORT).show()
         }
 
         return super.onOptionsItemSelected(item)
