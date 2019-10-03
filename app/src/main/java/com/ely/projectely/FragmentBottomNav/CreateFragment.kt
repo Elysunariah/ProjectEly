@@ -69,8 +69,9 @@ class CreateFragment : Fragment() {
 
         btnSave.setOnClickListener {
             savedata()
-            val intent = Intent(activity, UserFragment::class.java)
+            val intent = Intent(this@CreateFragment.context, UserFragment::class.java)
             startActivity(intent)
+
         }
     }
     private fun savedata() {

@@ -129,12 +129,12 @@ companion object {
 //        super.onCreate(savedInstanceState)
 //    }
 //
-//    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-//        inflater!!.inflate(R.menu.optionsmenudua, menu)
-//
-//
-//        super.onCreateOptionsMenu(menu, inflater)
-//    }
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater!!.inflate(R.menu.optionsmenudua, menu)
+
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         val id = item!!.itemId
