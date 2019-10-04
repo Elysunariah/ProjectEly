@@ -26,7 +26,7 @@ class UserFragment : Fragment() {
 
     lateinit var ref : DatabaseReference
     lateinit var list  :MutableList<User>
-    lateinit var listView: ListView
+//    lateinit var listView: ListView
 
     lateinit var fAuth : FirebaseAuth
 
@@ -64,7 +64,7 @@ companion object {
 
         ref = FirebaseDatabase.getInstance().getReference("USER")
         list = mutableListOf()
-        listView = view!!.findViewById(R.id.listView)
+//        listView = view!!.findViewById(R.id.listView)
 
         ref.addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
@@ -80,7 +80,7 @@ companion object {
                         }
                     }
                     val adapter = Adapter(activity!!,R.layout.item_grid,list)
-                    listView.adapter = adapter
+//                    listView.adapter = adapter
                 }
             }
 
@@ -124,11 +124,11 @@ companion object {
 //        main_rv_list_data.adapter = adapter
 //    }
 //
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        setHasOptionsMenu(true)
-//        super.onCreate(savedInstanceState)
-//    }
-//
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         inflater!!.inflate(R.menu.optionsmenudua, menu)
 

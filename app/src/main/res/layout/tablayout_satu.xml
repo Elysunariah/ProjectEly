@@ -15,7 +15,7 @@
 <!--            android:layout_width="match_parent"-->
 <!--            android:layout_height="wrap_content">-->
         <HorizontalScrollView
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -50,11 +50,11 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/ayahnovel" />
+                    android:src="@drawable/panda" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ayah | ANDRE HIRATA"
+                    android:text="American Panda"
                     android:textColor="#000"
                     android:textSize="13dp"/>
             </LinearLayout>
@@ -66,11 +66,11 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/ayahnovel" />
+                    android:src="@drawable/gagal" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ayah | ANDRE HIRATA"
+                    android:text="Gagal MoveOn"
                     android:textColor="#000"
                     android:textSize="13dp"/>
             </LinearLayout>
@@ -82,11 +82,11 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/ayahnovel" />
+                    android:src="@drawable/dhirga" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ayah | ANDRE HIRATA"
+                    android:text="Dhirga"
                     android:textColor="#000"
                     android:textSize="13dp"/>
             </LinearLayout>
@@ -98,11 +98,11 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/ayahnovel" />
+                    android:src="@drawable/complicated" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ayah | ANDRE HIRATA"
+                    android:text="Complicatetd"
                     android:textColor="#000"
                     android:textSize="13dp"/>
             </LinearLayout>
@@ -110,7 +110,7 @@
         </HorizontalScrollView>
 
         <HorizontalScrollView
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="252dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -128,12 +128,12 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/cahayanovel" />
+                        android:src="@drawable/sky" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cahaya Surga Dimatanya"
+                        android:text="Summer Sky"
                         android:textColor="#000"
                         android:textSize="13dp" />
                 </LinearLayout>
@@ -145,11 +145,11 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/ayahnovel" />
+                        android:src="@drawable/komet" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ayah | ANDRE HIRATA"
+                        android:text="Komet miner | Tere Liye"
                         android:textColor="#000"
                         android:textSize="13dp"/>
                 </LinearLayout>
@@ -161,11 +161,11 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/ayahnovel" />
+                        android:src="@drawable/is" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ayah | ANDRE HIRATA"
+                        android:text="This is why I need you"
                         android:textColor="#000"
                         android:textSize="13dp"/>
                 </LinearLayout>
@@ -177,11 +177,11 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/ayahnovel" />
+                        android:src="@drawable/orang" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ayah | ANDRE HIRATA"
+                        android:text="Orang-orang Biasa"
                         android:textColor="#000"
                         android:textSize="13dp"/>
                 </LinearLayout>
@@ -193,11 +193,11 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/ayahnovel" />
+                        android:src="@drawable/rich" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ayah | ANDRE HIRATA"
+                        android:text="Rich People Problem"
                         android:textColor="#000"
                         android:textSize="13dp"/>
                 </LinearLayout>
@@ -210,6 +210,7 @@
             android:layout_marginTop="455dp"
             android:textSize="25dp"
             android:textStyle="bold"
+            android:textColor="#000"
             android:text="Terpopuler"/>
         <HorizontalScrollView
             android:layout_marginTop="500dp"
@@ -230,12 +231,12 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/cahayanovel" />
+                        android:src="@drawable/bumi" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cahaya Surga Dimatanya"
+                        android:text="Bumi Manusia"
                         android:textColor="#000"
                         android:textSize="13dp" />
                 </LinearLayout>
@@ -247,11 +248,11 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/ayahnovel" />
+                        android:src="@drawable/cara" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ayah | ANDRE HIRATA"
+                        android:text="Cara berbahagia tanpa kepala"
                         android:textColor="#000"
                         android:textSize="13dp"/>
                 </LinearLayout>
@@ -263,11 +264,11 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/ayahnovel" />
+                        android:src="@drawable/five" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ayah | ANDRE HIRATA"
+                        android:text="Satu Setengah Meter"
                         android:textColor="#000"
                         android:textSize="13dp"/>
                 </LinearLayout>
@@ -279,11 +280,11 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/ayahnovel" />
+                        android:src="@drawable/senja" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ayah | ANDRE HIRATA"
+                        android:text="Senja dan Pagi"
                         android:textColor="#000"
                         android:textSize="13dp"/>
                 </LinearLayout>
@@ -295,11 +296,11 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/ayahnovel" />
+                        android:src="@drawable/thegirl" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ayah | ANDRE HIRATA"
+                        android:text="The girl who drank the moon"
                         android:textColor="#000"
                         android:textSize="13dp"/>
                 </LinearLayout>

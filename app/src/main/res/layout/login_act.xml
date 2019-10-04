@@ -26,39 +26,29 @@
         android:layout_marginLeft="40dp"
         android:textColor="#fff"
         android:textSize="15dp"/>
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="200dp"-->
-<!--        android:textSize="50dp"-->
-<!--        android:text="ENovel"-->
-<!--        android:gravity="center"-->
-<!--        android:textAllCaps="true"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textColor="#F7F2F3" />-->
 
-<!--    <RelativeLayout-->
-<!--        android:id="@+id/relativeLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="242dp"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="0dp"-->
-<!--        android:layout_marginLeft="30dp"-->
-<!--        android:layout_marginTop="489dp"-->
-<!--        android:layout_marginEnd="0dp"-->
-<!--        android:layout_marginRight="30dp"-->
-<!--        android:layout_marginBottom="0dp"-->
-<!--        android:elevation="4dp"-->
-<!--        android:orientation="vertical"-->
-<!--        android:padding="20dp">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="137dp"
+            android:layout_height="121dp"
+            android:src="@drawable/e" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enovel"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:layout_gravity="center"/>
+    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="200dp"
             android:orientation="vertical">
 
             <Button
